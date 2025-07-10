@@ -31,6 +31,9 @@ OPLUS_PINEAPPLE_BOARDS += \
                           giulia-23867-pineapple-overlay-T0.dtbo\
                           giulia-23867-pineapple-overlay-T0-EU.dtbo\
                           giulia-23867-pineapple-overlay.dtbo
+else ifeq ($(CONFIG_ENZO_DTB),y)
+OPLUS_PINEAPPLE_BOARDS += \
+                          enzo-23607-pineapple-overlay.dtbo
 endif
 
 dtb-y += $(OPLUS_PINEAPPLE_BOARDS) $(PINEAPPLE_BASE_DTB) $(PINEAPPLE_APQ_BASE_DTB)

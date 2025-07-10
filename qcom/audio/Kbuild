@@ -47,6 +47,7 @@ dtbo-y += \
 endif
 #OPLUS_DTS_OVERLAY start
 dtbo-$(CONFIG_WAFFLE_DTB) += oplus/waffle-22825-audio-pineapple-overlay.dtbo
+dtbo-$(CONFIG_ENZO_DTB) += oplus/enzo-23607-audio-pineapple-overlay.dtbo
 dtbo-$(CONFIG_AUDI_DTB) += oplus/audi-23803-audio-cliffs-overlay.dtbo
 dtbo-$(CONFIG_CORVETTE_DTB) += oplus/corvette-23814-audio-pineapple-overlay.dtbo
 dtbo-$(CONFIG_CAIHONG_DTB) += oplus/caihong-23926-audio-pineapple-overlay.dtbo

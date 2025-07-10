@@ -15,6 +15,8 @@ dtbo-$(CONFIG_CAIHONG_DTB) += oplus/caihong-camera-overlay.dtbo
 
 dtbo-$(CONFIG_CORVETTE_DTB) += oplus/corvette-camera-overlay.dtbo
 
+dtbo-$(CONFIG_ENZO_DTB) += oplus/enzo-camera-overlay.dtbo
+
 dtbo-$(CONFIG_GIULIA_DTB) += oplus/giulia-camera-overlay.dtbo
 
 dtbo-$(CONFIG_GIULIAC_DTB) += oplus/giuliaC-camera-overlay.dtbo
