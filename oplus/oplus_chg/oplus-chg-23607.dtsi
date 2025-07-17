@@ -358,7 +358,6 @@
 	qcom,pmic_ftm_vph = "/sys/bus/spmi/drivers/pmic-spmi/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:vadc@9000/iio:device0/in_voltage_pm8550b_vph_pwr_input";
 	qcom,pmic_ftm_vbat = "/sys/bus/spmi/drivers/pmic-spmi/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:vadc@9000/iio:device0/in_voltage_pm8550b_vbat_sns_qbg_input";
 
-
 	qcom,otg-booster-en-gpio = <&pm8550vs_e_gpios 4 0x00>;
 	qcom,otg-ovp-en-gpio = <&pm8550b_gpios 7 0x00>;
 	oplus,wrx_otg_en-gpio = <&pm8550_gpios 1 0x00>;//wls nor OVP check
@@ -380,16 +379,19 @@
 	compatible = "oplus,hal_sm8350";
 	oplus,vphy_ic = <&oplus_adsp_voocphy>;
 	oplus,voocphy_support;
+	oplus,vbat_min_bypass_max_channel;
 	oplus,vooc_project = <8>;
 	oplus,batt_num = <2>;
 	oplus,otg_scheme = <0>;//0:cid 1:ccdetect_gpio 2:switch
 	oplus_pm8550_charger: oplus,pm8550_charger {
 		oplus,ic_type = <OPLUS_CHG_IC_BUCK>;
 		oplus,ic_index = <0>;
+		oplus,ic_devinfo = "pm8550bhs","QCOM";
 	};
 	oplus_adsp_mos: oplus,adsp_mos {
 		oplus,ic_type = <OPLUS_CHG_IC_CP>;
 		oplus,ic_index = <0>;
+		oplus,ic_devinfo = "smb1510","QCOM";
 	};
 	oplus_adsp_dpdm_switch: oplus,adsp_dpdm_switch {
 		oplus,ic_type = <OPLUS_CHG_IC_MISC>;
@@ -398,6 +400,7 @@
 	oplus_adsp_gauge: oplus,adsp_gauge {
 		oplus,ic_type = <OPLUS_CHG_IC_GAUGE>;
 		oplus,ic_index = <0>;
+		oplus,ic_devinfo = "bq27541","TI";
 	};
 	oplus_adsp_ufcs: oplus,adsp_ufcs {
 		oplus,ic_type = <OPLUS_CHG_IC_UFCS>;
@@ -1345,7 +1348,8 @@
 		compatible = "oplus,cp-hl7227";
 		reg = <0x51>;
 		oplus,ic_type = <OPLUS_CHG_IC_CP>;
-		oplus,ic_index = <0>;
+		oplus,ic_index = <1>;
+		oplus,ic_devinfo = "hl7227","HALO MICRO";
 
 		oplus,cp_en-gpio = <&pm8550ve_gpios 8 0x00>;//check
 		oplus,cp_int-gpio = <&tlmm 181 0x00>;//check
@@ -1363,6 +1367,7 @@
 		#size-cells = <0>;
 		oplus,ic_type = <OPLUS_CHG_IC_RX>;
 		oplus,ic_index = <0>;
+		oplus,ic_devinfo = "nu1619","FUDA";
 		oplus,nor_ic = <&oplus_virtual_buck>;
 		oplus,support_epp_11w;
 
